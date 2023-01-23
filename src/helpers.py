@@ -140,3 +140,17 @@ def identify_low_variance_features(df, std_threshold):
     print("low variance features:", low_var_features)
     
     return low_var_features
+
+
+def normalize(dataset, target):
+    
+    """_Function to normalize data_
+
+    Returns:
+        dataset: _description_
+    """
+    dataNorm=((dataset-dataset.min())/(dataset.max()-dataset.min()))
+    dataNorm[target]=dataset[target]
+    
+    return dataNorm
+
